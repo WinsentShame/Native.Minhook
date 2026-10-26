@@ -1,4 +1,4 @@
-﻿# Native.Minhook
+﻿﻿# Native.Minhook
 
 A modern, lightweight, and high-performance C# wrapper for the [MinHook](https://github.com/TsudaKageyu/minhook) library. 
 
@@ -18,6 +18,17 @@ dotnet add package Native.Minhook
 ```
 
 *(Note: Your project must have `<PublishAot>true</PublishAot>` enabled to use this package).*
+
+## Publishing
+Native AOT requires you to publish the project for a specific architecture. You cannot use dotnet run or dotnet build for testing the statically linked native code. Use one of the following commands:
+
+```bash
+# For 64-bit applications
+dotnet publish -r win-x64 -c Release
+
+# For 32-bit applications
+dotnet publish -r win-x86 -c Release
+```
 
 ## Quick Start
 

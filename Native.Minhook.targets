@@ -1,0 +1,14 @@
+﻿<Project>
+  <ItemGroup Condition="'$(PublishAot)' == 'true' AND $(RuntimeIdentifier.StartsWith('win'))">
+    
+    <LinkerArg Include="/DEPENDENTLOADFLAG:0x800" />
+    <LinkerArg Include="vcruntime.lib" Condition="$(RuntimeIdentifier.Contains('x86'))" />
+    
+    <NativeLibrary Include="$(MSBuildThisFileDirectory)..\runtimes\win-x64\native\Minhook_64.lib" Condition="$(RuntimeIdentifier.Contains('x64'))" />
+    <NativeLibrary Include="$(MSBuildThisFileDirectory)..\runtimes\win-x86\native\Minhook_86.lib" Condition="$(RuntimeIdentifier.Contains('x86'))" />
+    
+    <NativeLibrary Include="$(MSBuildThisFileDirectory)..\runtimes\win-x86\native\fix_ultof3.lib" Condition="$(RuntimeIdentifier.Contains('x86'))" />
+    
+    <DirectPInvoke Include="Minhook" />
+  </ItemGroup>
+</Project>

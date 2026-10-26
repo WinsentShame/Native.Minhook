@@ -17,6 +17,12 @@
 		<PackageTags>minhook;hook;nativeaot;aot;interop;game-hacking;x86;x64;cheat</PackageTags>
 
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+		<Title>Native.Minhook</Title>
+
+		<RepositoryUrl>https://github.com/WinsentShame/Native.Minhook</RepositoryUrl>
+
+		<Copyright>Copyright (c) 2026 WinsentShame</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>

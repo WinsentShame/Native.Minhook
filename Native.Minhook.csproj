@@ -14,7 +14,7 @@
 		<Version>0.0.1</Version>
 		<Authors>WinsentShame</Authors>
 		<Description>A lightweight, high-performance C# wrapper for MinHook, designed specifically for Native AOT applications. Supports x86/x64 static linking.</Description>
-		<PackageTags>minhook;hook;nativeaot;aot;interop;game-hacking;x86;x64;cheat</PackageTags>
+		<PackageTags>minhook;hook;nativeaot;aot;interop;api-hooking;detours;x86;x64;native-interop</PackageTags>
 
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 
@@ -23,6 +23,8 @@
 		<RepositoryUrl>https://github.com/WinsentShame/Native.Minhook</RepositoryUrl>
 
 		<Copyright>Copyright (c) 2026 WinsentShame</Copyright>
+
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,6 +36,13 @@
 	<ItemGroup>
 		<None Include="Native.Minhook.targets" Pack="true" PackagePath="build\" />
 		<None Include="LICENSE" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>

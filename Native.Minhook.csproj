@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<OutputType>Library</OutputType>
+	<PublishAot>true</PublishAot>
+	<NativeLib>Shared</NativeLib>
+	<AssemblyVersion>0.0.1</AssemblyVersion>
+	<FileVersion>0.0.1</FileVersion>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+
+	<ItemGroup Condition="$(RuntimeIdentifier.StartsWith('win'))">
+		<LinkerArg Include="/DEPENDENTLOADFLAG:0x800" />
+		<LinkerArg Include="vcruntime.lib" Condition="$(RuntimeIdentifier.Contains('x86'))" />
+		<NativeLibrary Include="Library\Minhook_64.lib" Condition="$(RuntimeIdentifier.Contains('x64'))" />
+		<NativeLibrary Include="Library\Minhook_86.lib" Condition="$(RuntimeIdentifier.Contains('x86'))" />
+		<NativeLibrary Include="Library\fix_ultof3.lib" Condition="$(RuntimeIdentifier.Contains('x86'))" />
+		<DirectPInvoke Include="Minhook" />
+	</ItemGroup>
+
+</Project>
